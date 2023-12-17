@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Movie</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="scripts.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    
+    <body>
+        <div class="container-4">
+        <h2><center>What is your favorite Christmas Movie?</center></h2>
+        <table class="table table-striped" id="dataTable">
+           <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Movie</th>
+                <th>Email</th>
+            </tr>
+           </thead>
+           <tbody>
+           </tbody> 
+        </table>  
+        <form id="dataForm">
+        <div class="for-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" required>
+            </div>
+            <label for="movie">Movie:</label>
+            <input type="text" class="form-control" id="movie" required>
+            </div>
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" required>
+            </div>
+            <button type="button" class="btn-primary" oneClick="addRow"()>Submit</button>
+        </form>
+    </div>
+    <script>
+        function addRow(){
+            var name = document.getElementById("name").value;
+            var movie = document.getElementById("movie").value;
+            var email = document.getElementById("email").value;
+
+            var table = documment.getElementById("dataTable");
+            var newRow = table.insertRow(table.rows.length);
+
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+
+            cell1.innerHTML = generateID();
+            cell2.innerHTML = name;
+            cell3.innerHTML = movie;
+            cell4.innerHTML = email;
+
+            document.getElementById("name").value = "";
+            document.getElementById("movie").value = "";
+            document.getElementById("email").value = "";
+            
+        }
+        function generateID(){
+            return Math.floor(math.random()* 1000);
+        }
+    </script>
+    </body>
+    </head>
+    </html>
+
+      
+        
